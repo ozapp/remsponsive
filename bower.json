@@ -1,0 +1,26 @@
+{
+  "name": "remsponsive",
+  "authors": [
+    "John Li <ozapp@users.noreply.github.com>"
+  ],
+  "description": "Use rem for responsive design.",
+  "main": "remsponsive.js",
+  "moduleType": [
+    "globals"
+  ],
+  "repository": {
+      "type": "git",
+      "url": "git://github.com/ozapp/remsponsive.git"
+  },
+  "keywords": [
+    "response",
+    "design",
+    "css",
+    "rem"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "tests"
+  ]
+}
