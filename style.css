@@ -8,9 +8,8 @@ h1 {
 div{
     position: absolute;
     width: 80%;
-    height: 400rem;
-    color: blue;
-    font-size: 18rem;
     left: 10%;
     top: 15%;
+    color: blue;
+    font-size: 18rem;
 }
