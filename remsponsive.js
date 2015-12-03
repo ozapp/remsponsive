@@ -4,9 +4,13 @@
     // global namespace
     var Remsponsive = Remsponsive || {};
     Remsponsive.breakPoints = [];
+    Remsponsive.init = init;
+    Remsponsive.setRootFontSize = setRootFontSize;
 
+    // default has 640px and 1024px breakPoints
+    Remsponsive.init([640, 1024]);
 
-    Remsponsive.init = function(breakPoints) {
+    function init(breakPoints) {
         if (!Array.isArray(breakPoints)) {
             console.log('Remsponsive init error: breakPoints should be an Array.');
         } else {
@@ -14,17 +18,21 @@
         }
     };
 
-    // default design is for 1024px width
-    Remsponsive.init([640, 1024]);
 
-    Remsponsive.setRootFontSize = function() {
+
+    function setRootFontSize() {
         var fontSize;
-        if (window.innerWidth < Remsponsive.breakPoints[0]) {
-            fontSize = window.innerWidth / Remsponsive.breakPoints[0];
-        } else {
-            fontSize = window.innerWidth / Remsponsive.breakPoints[1];
-        }
-        document.getElementsByTagName("html")[0].style.fontSize = fontSize + "px";
+        for (var i = 0; i < Remsponsive.breakPoints.length; i++) {
+            if(window.innerWidth < Remsponsive.breakPoints[i]){
+                fontSize = window.innerWidth / Remsponsive.breakPoints[i];
+                document.documentElement.style.fontSize = fontSize + "px";
+                return;
+            }else{
+                fontSize = window.innerWidth / Remsponsive.breakPoints[i];
+                document.documentElement.style.fontSize = fontSize + "px";
+            }
+        };
+        
     };
 
     window.addEventListener("orientationchange", function() {
